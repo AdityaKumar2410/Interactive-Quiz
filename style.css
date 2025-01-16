@@ -1,0 +1,40 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+  }
+  
+  .navbar {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+  }
+  
+  .btn {
+    width: 100%;
+    text-align: left;
+  }
+  
+  .progress {
+    height: 20px;
+    border-radius: 10px;
+  }
+  
+  .progress-bar {
+    background-color: #007bff;
+  }
+  
+  .alert {
+    font-weight: bold;
+  }
+  
+  #loader {
+    margin-top: 50px;
+  }
+  
+  .marked {
+    background-color: #ffeb3b !important;
+  }
+  
