@@ -71,7 +71,7 @@ function showQuestion() {
         <div>
           ${question.options
             .map(
-              (option, index) =>
+              (option) =>
                 `<button class="btn ${
                   question.selected === option ? "btn-primary" : "btn-outline-primary"
                 } d-block mb-2" onclick="selectAnswer('${option}')">${decodeHTML(option)}</button>`
@@ -81,10 +81,10 @@ function showQuestion() {
       </div>
     </div>
     <div class="d-flex justify-content-between">
-      <button class="btn btn-secondary mx-2" onclick="previousQuestion()" ${currentQuestionIndex === 0 ? "disabled" : ""}>Previous</button>
-      <button class="btn btn-warning mx-2" onclick="markForReview()">Mark for Review</button>
-      <button class="btn btn-secondary mx-2" onclick="nextQuestion()" ${currentQuestionIndex === questions.length - 1 ? "disabled" : ""}>Next</button>
-      <button class="btn btn-success mx-2" onclick="submitQuiz()">Submit</button>
+      <button class="btn btn-secondary" onclick="previousQuestion()" ${currentQuestionIndex === 0 ? "disabled" : ""}>Previous</button>
+      <button class="btn btn-warning" onclick="markForReview()">Mark for Review</button>
+      <button class="btn btn-secondary" onclick="nextQuestion()" ${currentQuestionIndex === questions.length - 1 ? "disabled" : ""}>Next</button>
+      <button class="btn btn-success" onclick="submitQuiz()">Submit</button>
     </div>
   `;
 }
@@ -134,10 +134,10 @@ function submitQuiz() {
 
 // Restart the quiz
 function restartQuiz() {
-  currentQuestionIndex = 0;
-  score = 0;
-  markedForReview.clear();
-  fetchQuestions();
+  currentQuestionIndex = 0; // Reset to the first question
+  score = 0;               // Reset the score
+  markedForReview.clear(); // Clear the marked for review set
+  fetchQuestions();        // Fetch new questions and restart the quiz
 }
 
 // Utility function to decode HTML entities
